@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Write your word</h1>
+    <input type="text" id="input-1" placeholder="Write your word" >
+    <input type="button" id="letter" onclick= "reverseString()" value="Click me" />
+    <script>        
+       function reverseString() {
+           var input_data = document.getElementById('input-1').value;
+           
+            var checkno = /^[A-Za-z]/;
+            var special =/^[A-Za-z]+[0-9]/;
+           
+           var newString = "";
+
+
+            for (var i = input_data.length - 1; i >= 0; i--) {
+                newString += input_data[i];
+                                                // check word contain number or special charecter
+                if(input_data.match(/[0-9]/)){
+                        console.log("contain a number")
+                    }
+                else if(input_data.match != special){
+                        console.log("contain a special charecter")
+                    }
+
+            }
+            console.log(newString)
+            // check palindrom or not 
+            if(input_data!=0){
+                if(input_data == newString){
+                        console.log('It is a palindrome');
+                    }
+                    else{
+                        console.log('It is not a palindrome');
+                    }
+                }
+                else{
+                    alert("give a word or letter")
+                    
+                }
+
+            return newString;
+
+            
+        }
+        
+    </script>
+
+</body>
+</html>

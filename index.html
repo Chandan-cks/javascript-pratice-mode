@@ -1,0 +1,201 @@
+<html>
+    <head>
+        <title>Update</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div class="upperbody">
+                <div class="name">
+                    <h1><strong>Welcome to real world</strong></h1>
+                </div>
+            </div>
+        </header>
+        <section>
+            <!-- upperpart -->
+                    <div class="head">
+                        <h1>Signup</h1>
+                    <p>Please fill in this form to create an account</p>
+                    </div>
+                <!-- form create -->
+                <form action="#" onsubmit="return validate()" class="bg-light">
+                        <div class="form-group">
+                            <label for="user" class="font-weight-bold"> First name </label>
+                            <input type="text" name="user" class="form-control" id="user" autocomplete="off" onfocus="myFunction()"><br>
+                            <span id="firstname" class="text-danger font-weight-bold"> </span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="user" class="font-weight-bold"> last name </label>
+                            <input type="text" name="user" class="form-control" id="user1" autocomplete="off">
+                            <span id="lastname" class="text-danger font-weight-bold"> </span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date of birth" class="title">DOB</label>
+                            <input type="date" class="form-input" placeholder="date of birth" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender"> Gender:  </label>
+                            <input type="radio" name="gender"  id="#" value="male">male
+                            <input type="radio" name="gender"  id="#" value="female">female
+                            <input type="radio" name="gender"  id="#" value="others">others 
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-weight-bold"> Mobile Number: </label>
+                            <input type="tel" name="mobile" class="form-control" id="mobileNumber" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" autocomplete="off">
+                            <span id="mobileno" class="text-danger font-weight-bold"> </span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="font-weight-bold"> Email: </label>
+                            <input type="text" name="email" class="form-control" id="emails" autocomplete="off">
+                            <span id="emailids" class="text-danger font-weight-bold"> </span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="font-weight-bold"> Password: </label>
+                            <input type="text" name="pass" class="form-control" id="pass" autocomplete="off">
+                            <span id="passwords" class="text-danger font-weight-bold"> </span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="font-weight-bold"> Confirm Password: </label>
+                            <input type="text" name="conpass" class="form-control" id="conpass" autocomplete="off">
+                            <span id="confrmpass" class="text-danger font-weight-bold"> </span>
+                        </div>
+        
+                        
+        
+                        <input type="submit" name="submit" value="submit" class="btn" 	autocomplete="off">
+
+                    </div>
+                </form>
+               </div>
+           </div>
+        </section>
+        <footer></footer>
+        <!-- script part -->
+        <script type="text/javascript">
+		
+
+            function validate(){
+    
+                var user = document.getElementById('user').value;
+                var user1 = document.getElementById('user1').value;
+                
+                var mobileNumber = document.getElementById('mobileNumber').value;
+                var emails = document.getElementById('emails').value;
+    
+                var pass = document.getElementById('pass').value;
+                var confirmpass = document.getElementById('conpass').value;
+                
+                // function myFunction(x) {
+                //     var name = document.getElementsByName("user")[0].value;
+	            //         if (name.length <= 3)
+		        //             return "Name should be at least three characters.\n";	
+	            //                 return "";
+                // }
+                
+                
+                //  function validationName()  {
+                    // var user = document.getElementByName('user')[0].value; 
+                               if(user == "")
+                            document.getElementById('firstname').innerHTML =" ** Please fill the username field";
+                            // return "Name should be at least three characters."
+                            return false;
+                            console.log(5+6)
+                        
+                         if((user.length <= 2) || (user.length > 20)) {
+                            document.getElementById('firstname').innerHTML =" ** Username lenght must be between 2 and 20";
+                            return false;	
+                        }
+                         if(!isNaN(user)){
+                            document.getElementById('firstname').innerHTML =" ** only characters are allowed";
+                            return false;
+                        }
+            
+
+
+
+    
+                if(user1 == ""){
+                    document.getElementById('lastname').innerHTML =" ** Please fill the username field";
+                    return false;
+                }
+                if((user1.length <= 2) || (user1.length > 20)) {
+                    document.getElementById('lastname').innerHTML =" ** Username lenght must be between 2 and 20";
+                    return false;	
+                }
+                if(!isNaN(user1)){
+                    document.getElementById('lastname').innerHTML =" ** only characters are allowed";
+                    return false;
+                }
+    
+
+
+                if(mobileNumber == ""){
+                    document.getElementById('mobileno').innerHTML =" ** Please fill the mobile NUmber field";
+                    return false;
+                }
+                if(isNaN(mobileNumber)){
+                    document.getElementById('mobileno').innerHTML =" ** user must write digits only not characters";
+                    return false;
+                }
+                if(mobileNumber.length!=10){
+                    document.getElementById('mobileno').innerHTML =" ** Mobile Number must be 10 digits only";
+                    return false;
+                }
+    
+    
+    
+                if(emails == ""){
+                    document.getElementById('emailids').innerHTML =" ** Please fill the email idx` field";
+                    return false;
+                }
+                if(emails.indexOf('@') <= 0 ){
+                    document.getElementById('emailids').innerHTML =" ** @ Invalid Position";
+                    return false;
+                }
+    
+                if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
+                    document.getElementById('emailids').innerHTML =" ** . Invalid Position";
+                    return false;
+                }
+    
+    
+    
+                if(pass == ""){
+                    document.getElementById('passwords').innerHTML =" ** Please fill the password field";
+                    return false;
+                }
+                if((pass.length <= 5) || (pass.length > 20)) {
+                    document.getElementById('passwords').innerHTML =" ** Passwords lenght must be between  5 and 20";
+                    return false;	
+                }
+    
+    
+                if(pass!=confirmpass){
+                    document.getElementById('confrmpass').innerHTML =" ** Password does not match the confirm password";
+                    return false;
+                }
+    
+    
+    
+                if(confirmpass == ""){
+                    document.getElementById('confrmpass').innerHTML =" ** Please fill the confirmpassword field";
+                    return false;
+                }
+    
+    
+                // return true;
+    
+                
+            
+            }
+        </script>
+    </body>
+</html>
